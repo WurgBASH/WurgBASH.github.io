@@ -30,7 +30,6 @@ var rightPressed=false;
 var leftPressed=false;
 var paddleColor="#FF69B4";
 var score=0;
-var highscore=0;
 function drawHighScore(){
 	ctx.font="16px Arial";
 	var highscore=document.cookie.split('=')[1];
@@ -86,8 +85,8 @@ function collisionDetection(){
 function draw() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	drawPaddle();
-	drawScore();
 	drawHighScore();
+	drawScore();
 	drawBricks();
 	if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
     dx = -dx;
@@ -110,6 +109,7 @@ function draw() {
 
 	if(y+dy >canvas.height) {
 			y = canvas.height-30;
+			var highscore=document.cookie.split('=')[1];
 			if(score>highscore)
 					document.cookie="highscore="+score;
 			alert("GAME OVER");
