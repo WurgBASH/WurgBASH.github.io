@@ -172,7 +172,7 @@ function mouseMoveHandler(e){
 	}
 }
 function handleMove(e){
-	var touchX= parseInt(touchobj.clientX
+	var touchX= parseInt(touchobj.clientX);
 	if(touchX>0 && touchX<canvas.width){
 		paddleX =touchX-paddleWidth/2;
 	}
