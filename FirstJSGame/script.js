@@ -89,6 +89,7 @@ function draw() {
 	drawHighScore();
 	drawScore();
 	drawBricks();
+	highscore=document.cookie.split('=')[1];
 	if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
     dx = -dx;
 	}
@@ -112,7 +113,7 @@ function draw() {
 			y = canvas.height-30;
 			if(score>highscore){
 					document.cookie="highscore="+score;}
-			alert("GAME OVER YOUR SCORE: "+score);
+			alert("GAME OVER, YOUR SCORE: "+score);
 			document.location.reload();
 	}
 	if(y+dy<ballRadius){
