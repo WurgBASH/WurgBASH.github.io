@@ -137,6 +137,43 @@ function draw() {
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 document.addEventListener("mousemove", mouseMoveHandler,false);
+handleTouchStart =function(e) {                                         
+    xDown = e.touches[0].clientX;                                      
+    yDown = e.touches[0].clientY;                                      
+};
+                                                
+handleTouchMove = function(e) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+
+    var xUp = e.touches[0].clientX;                                    
+    var yUp = e.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+
+    if(Math.abs( xDiff )+Math.abs( yDiff )>150)
+      if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
+        if ( xDiff > 0 ) 
+            alert('лево');
+         else 
+            alert('право');                   
+      } else {
+        if ( yDiff > 0 ) 
+            alert('вверх'); 
+         else 
+            alert('вниз');                                                                 
+      }
+    xDown = null;
+    yDown = null;
+};
+
+var xDown = null;                                                        
+var yDown = null;
+
+document.addEventListener('touchstart', handleTouchStart, false);        
+document.addEventListener('touchmove', handleTouchMove, false);
 function keyDownHandler(e){
 	if(e.keyCode==39){
 		rightPressed=true;
