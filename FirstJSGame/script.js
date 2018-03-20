@@ -70,7 +70,7 @@ function collisionDetection(){
 			if(score==brickRowCount*brickColumnCout){
 				if(score>highscore){
 					document.cookie="highscore="+score;}
-				alert("YOU WIN, CONGRATULATIONS!");
+				alert("YOU WIN, YOUR SCORE: "+score);
 				document.location.reload();
 			}
 			if(b.status==1){
@@ -112,7 +112,7 @@ function draw() {
 			y = canvas.height-30;
 			if(score>highscore){
 					document.cookie="highscore="+score;}
-			alert("GAME OVER");
+			alert("GAME OVER YOUR SCORE: "+score);
 			document.location.reload();
 	}
 	if(y+dy<ballRadius){
