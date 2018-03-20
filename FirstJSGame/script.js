@@ -30,9 +30,10 @@ var rightPressed=false;
 var leftPressed=false;
 var paddleColor="#FF69B4";
 var score=0;
+var highscore=0;
 function drawHighScore(){
 	ctx.font="16px Arial";
-	var highscore=document.cookie.split('=')[1];
+	highscore=document.cookie.split('=')[1];
 	ctx.fillStyle="#0095DD";
 	ctx.fillText("HScore: "+highscore,100,20);
 }
@@ -67,8 +68,8 @@ function collisionDetection(){
 		for(r=0;r<brickRowCount;r++){
 			var b=bricks[c][r];
 			if(score==brickRowCount*brickColumnCout){
-				if(score>highscore)
-					document.cookie="highscore="+score;
+				if(score>highscore){
+					document.cookie="highscore="+score;}
 				alert("YOU WIN, CONGRATULATIONS!");
 				document.location.reload();
 			}
@@ -109,9 +110,8 @@ function draw() {
 
 	if(y+dy >canvas.height) {
 			y = canvas.height-30;
-			var highscore=document.cookie.split('=')[1];
-			if(score>highscore)
-					document.cookie="highscore="+score;
+			if(score>highscore){
+					document.cookie="highscore="+score;}
 			alert("GAME OVER");
 			document.location.reload();
 	}
