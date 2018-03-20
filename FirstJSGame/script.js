@@ -172,9 +172,9 @@ function mouseMoveHandler(e){
 	}
 }
 function handleMove(e){
-	var relativeX=e.clientX-canvas.offsetLeft;
-	if(relativeX>0 && relativeX<canvas.width){
-		paddleX =relativeX-paddleWidth/2;
+	var touchX= parseInt(touchobj.clientX
+	if(touchX>0 && touchX<canvas.width){
+		paddleX =touchX-paddleWidth/2;
 	}
 }
 setInterval(draw, 10);
