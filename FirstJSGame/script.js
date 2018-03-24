@@ -23,17 +23,17 @@ for(c=0;c<brickColumnCout;c++){
 	}
 }
 var paddleHeight=20;
-var paddleWidth =75;
+var paddleWidth =85;
 var paddleX = (canvas.width-paddleWidth)/2;
 var paddleY=295;
 var rightPressed=false;
 var leftPressed=false;
 var paddleColor="#FF69B4";
 var score=0;
-var highscore=0;
-/*
+var highscore;
+document.cookie="highscore="+score;
 var leftbtn;
-var rightbtn;*/
+var rightbtn;
 function drawHighScore(){
 	ctx.font="16px Arial";
 	highscore=document.cookie.split('=')[1];
@@ -86,14 +86,14 @@ function collisionDetection(){
 		}
 	}
 }
-/*function buttonControl(rightbtn,leftbtn){
+function buttonControl(rightbtn,leftbtn,b){
 	if(rightbtn){
-		paddleX +=5;
+		rightPressed = b;
 	}
 	else if(leftbtn){
-		paddleX -=5;
+		leftPressed=b;
 	}
-}*/
+}
 function draw() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	drawPaddle();
@@ -148,7 +148,6 @@ function draw() {
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 document.addEventListener("mousemove", mouseMoveHandler,false);
-document.addEventListener("touchmove", handleMove, false);
 function keyDownHandler(e){
 	if(e.keyCode==39 ){
 		rightPressed=true;
@@ -169,12 +168,6 @@ function mouseMoveHandler(e){
 	var relativeX=e.clientX-canvas.offsetLeft;
 	if(relativeX>0 && relativeX<canvas.width){
 		paddleX =relativeX-paddleWidth/2;
-	}
-}
-function handleMove(e){
-	var touchX= parseInt(touchobj.clientX);
-	if(touchX>0 && touchX<canvas.width){
-		paddleX =touchX-paddleWidth/2;
 	}
 }
 setInterval(draw, 10);

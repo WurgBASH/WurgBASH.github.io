@@ -3,18 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <title>Gamedev Canvas Workshop</title>
-    <style>
-        * { padding: 0; margin: 0; }
-        canvas { background: #F8F8FF; display: block; margin: 0 auto; }
-    </style>
-
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 <canvas id="myCanvas" width="720" height="320"></canvas>
-<!--<div>
-     <button  type="button" id="ok" style="font-weight: 700; margin-right: 20px;"ontouchstart="buttonControl(false,true);">LEFT</button>
-     <button type="button" id="no" style="font-weight: 700; margin-right: 20px;"ontouchstart="buttonControl(true,false); ">RIGHT</button>
-</div>-->
+<div class="btn">
+     <button  type="button" id="ok" style="font-weight: 700; margin-right: 20px;" onmousedown="buttonControl(false,true,true);" onmouseup="buttonControl(false,true, false);">LEFT</button>
+     <button type="button" id="no" style="font-weight: 700; margin-right: 20px;" onmousedown="buttonControl(true,false, true); "onmouseup="buttonControl(true,false, false);">RIGHT</button>
+</div>
 <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
