@@ -96,11 +96,11 @@ function buttonControl(rightbtn,leftbtn,b){
 }
 function draw() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	highscore=document.cookie.split('=')[1];
 	drawPaddle();
 	drawHighScore();
 	drawScore();
 	drawBricks();
-	highscore=document.cookie.split('=')[1];
 	if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
     dx = -dx;
 	}
@@ -122,8 +122,8 @@ function draw() {
 
 	if(y+dy >canvas.height) {
 			y = canvas.height-30;
-			//if(score>highscore){
-					document.cookie="highscore="+score;//}
+			if(score>highscore)
+					document.cookie="highscore="+score;
 			alert("GAME OVER, YOUR SCORE: "+score);
 			document.location.reload();
 	}
