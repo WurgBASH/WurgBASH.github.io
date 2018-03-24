@@ -122,8 +122,8 @@ function draw() {
 
 	if(y+dy >canvas.height) {
 			y = canvas.height-30;
-			if(score>highscore){
-					document.cookie="highscore="+score;}
+			//if(score>highscore){
+					document.cookie="highscore="+score;//}
 			alert("GAME OVER, YOUR SCORE: "+score);
 			document.location.reload();
 	}
