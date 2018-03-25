@@ -1,0 +1,19 @@
+* { padding: 0; margin: 0 auto; }
+
+body{
+	background-color: #FFB6C1;
+	padding-top: 5%;
+}
+.conteiner{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+canvas
+{ 
+	background: #8ee2fe; 
+	display: block; 
+	margin: 0 auto; 
+	margin-bottom: 20px;
+}
