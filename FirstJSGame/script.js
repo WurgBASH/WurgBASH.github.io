@@ -96,6 +96,7 @@ function buttonControl(rightbtn,leftbtn,b){
 }
 function draw() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	document.cookie="highscore="+score;
 	drawPaddle();
 	drawHighScore();
 	drawScore();
