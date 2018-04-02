@@ -2,15 +2,15 @@ var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 class Figure{
 	constructor(){
-		this.x=random(0,canvas.width);
-		this.y=random(0,canvas.height);
+		this.x=Math.random(0, canvas.width);
+		this.y=Math.random(0, canvas.height);
 		this.color='rgb('+random(0,255) + ','+random(0,255)+','+random(0,255)+')';
 	}
 }
 class Ball extends Figure{
 	constructor(){
 		super();
-		this.radius=random(10,50);
+		this.radius=Math.random(10,50);
 	}
 	draw(){
 		ctx.beginPath();
@@ -28,8 +28,8 @@ class Ball extends Figure{
 class Box extends Figure{
 	constructor(){
 		super();
-		this.width=random(10,50);
-		this.height=random(10,50);
+		this.width=Math.random(10,50);
+		this.height=Math.random(10,50);
 	}
 	draw(){
 		ctx.beginPath();
