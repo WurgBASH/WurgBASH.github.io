@@ -62,4 +62,4 @@ function draw(){
 }
 
 setInterval(draw,10);
-document.addEventListener("mousedown",onclick,false);//sa
+document.addEventListener("mousedown",onclick,false);
