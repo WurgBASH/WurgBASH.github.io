@@ -1,16 +1,21 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
+function random(min, max) {
+    var rand = min - 0.5 + Math.random() * (max - min + 1)
+    rand = Math.round(rand);
+    return rand;
+  }
 class Figure{
 	constructor(){
-		this.x=Math.random(0, canvas.width);
-		this.y=Math.random(0, canvas.height);
-		this.color='rgb('+Math.random(0,255) + ','+Math.random(0,255)+','+Math.random(0,255)+')';
+		this.x=random(0, canvas.width);
+		this.y=random(0, canvas.height);
+		this.color='rgb('+random(0,255) + ','+random(0,255)+','+random(0,255)+')';
 	}
 }
 class Ball extends Figure{
 	constructor(){
 		super();
-		this.radius=Math.random(10,50);
+		this.radius=random(10,50);
 	}
 	draw(){
 		ctx.beginPath();
@@ -21,15 +26,15 @@ class Ball extends Figure{
 	}
 	onclick(x,y){
 		if((x-this.x)*(x-this.x)+(y-this.y)<=this.radius*this.radius){
-			this.color='rgb('+Math.random(0,255)+','+Math.random(0,255)+','+Math.random(0,255)+')';
+			this.color='rgb('+random(0,255)+','+random(0,255)+','+random(0,255)+')';
 		}
 	}
 }
 class Box extends Figure{
 	constructor(){
 		super();
-		this.width=Math.random(10,50);
-		this.height=Math.random(10,50);
+		this.width=random(10,50);
+		this.height=random(10,50);
 	}
 	draw(){
 		ctx.beginPath();
@@ -54,6 +59,7 @@ function onclick(event){
 }
 var figures=[new Ball(),new Box(), new Box(), new Ball(), new Ball(), new Box(), new Box(),new Ball()];
 function draw(){
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	ctx.fillStyle='rgba(0,0,0,0.25)';
 	ctx.fillRect(0,0,canvas.width,canvas.height);
 	for(var i = 0; i<figures.length;i++){
