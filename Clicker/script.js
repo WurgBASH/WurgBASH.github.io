@@ -1,9 +1,7 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 function random(min, max) {
-    var rand = min - 0.5 + Math.random() * (max - min + 1)
-    rand = Math.round(rand);
-    return rand;
+    return min+Math.round(Math.random()*(max-min));
   }
 class Figure{
 	constructor(){
@@ -19,14 +17,14 @@ class Ball extends Figure{
 	}
 	draw(){
 		ctx.beginPath();
-		ctx.arc(this.x,this.y,this.radius,0,Math.Pi*2,false);
-		ctx.fillStyle = this.color;
+		ctx.arc(this.x,this.y,this.radius,0,2*Math.PI,false);
+		ctx.fillStyle=this.color;
 		ctx.fill();
 		ctx.closePath();
 	}
 	onclick(x,y){
-		if((x-this.x)*(x-this.x)+(y-this.y)<=this.radius*this.radius){
-			this.color='rgb('+random(0,255)+','+random(0,255)+','+random(0,255)+')';
+		if((x-this.x)*(x-this.x)+(y-this.y)*(y-this.y)<=this.radius*this.radius){
+			this.color='rgb('+random(0,255) + ','+random(0,255)+','+random(0,255)+')';
 		}
 	}
 }
@@ -44,11 +42,12 @@ class Box extends Figure{
 		ctx.closePath();
 	}
 	onclick(x,y){
-		if(x>=this.x&&x<=this.width && y>=this.y && y<=this.y +this.height){
+		if(x>=this.x&&x<=this.x+this.width && y>=this.y && y<=this.y +this.height){
 			this.x+=10;
 		}
 	}
 }
+var figures=[new Ball(),new Box(), new Box(), new Ball(), new Ball(), new Box(), new Box(),new Ball()];
 function onclick(event){
 	var rect = canvas.getBoundingClientRect();
 	var x = event.clientX-rect.left;
@@ -57,7 +56,6 @@ function onclick(event){
 		figures[i].onclick(x,y);
 	}
 }
-var figures=[new Ball(),new Box(), new Box(), new Ball(), new Ball(), new Box(), new Box(),new Ball()];
 function draw(){
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	ctx.fillStyle='rgba(0,0,0,0.25)';
