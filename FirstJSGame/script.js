@@ -98,8 +98,8 @@ function draw() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	var highscore=document.cookie.split('=')[1];
 	drawPaddle();
-	drawHighScore();
 	drawScore();
+	drawHighScore();
 	drawBricks();
 	if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
     dx = -dx;
