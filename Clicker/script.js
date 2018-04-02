@@ -48,7 +48,7 @@ function onclick(event){
 	var rect = canvas.getBoundingClientRect();
 	var x = event.clientX-rect.left;
 	var y=event.clientY-rect.top;
-	for(var i=0;i<figure.length;i++){
+	for(var i=0;i<figures.length;i++){
 		figures[i].onclick(x,y);
 	}
 }
