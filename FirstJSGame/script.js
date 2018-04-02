@@ -98,9 +98,6 @@ function draw() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	drawPaddle();
 	drawHighScore();
-	if (score>highscore){
-		document.cookie="highscore="+score;
-	}
 	drawScore();
 	drawBricks();
 	if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
