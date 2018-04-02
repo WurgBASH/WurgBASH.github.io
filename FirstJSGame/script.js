@@ -30,13 +30,12 @@ var rightPressed=false;
 var leftPressed=false;
 var paddleColor="#FF69B4";
 var score;
-var highscore;
 //document.cookie="highscore="+score;
 var leftbtn;
 var rightbtn;
 function drawHighScore(){
 	ctx.font="16px Arial";
-	highscore=document.cookie.split('=')[1];
+	var highscore=document.cookie.split('=')[1];
 	ctx.fillStyle="#0095DD";
 	ctx.fillText("HScore: "+highscore,100,20);
 }
