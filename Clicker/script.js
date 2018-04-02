@@ -39,7 +39,7 @@ class Box extends Figure{
 		ctx.closePath();
 	}
 	onclick(x,y){
-		if(x>=this.x&&x<=thix.width && y>=this.y && y<=this.y +this.height){
+		if(x>=this.x&&x<=this.width && y>=this.y && y<=this.y +this.height){
 			this.x+=10;
 		}
 	}
