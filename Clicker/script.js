@@ -4,7 +4,7 @@ class Figure{
 	constructor(){
 		this.x=Math.random(0, canvas.width);
 		this.y=Math.random(0, canvas.height);
-		this.color='rgb('+random(0,255) + ','+random(0,255)+','+random(0,255)+')';
+		this.color='rgb('+Math.random(0,255) + ','+Math.random(0,255)+','+Math.random(0,255)+')';
 	}
 }
 class Ball extends Figure{
@@ -21,7 +21,7 @@ class Ball extends Figure{
 	}
 	onclick(x,y){
 		if((x-this.x)*(x-this.x)+(y-this.y)<=this.radius*this.radius){
-			this.color='rgb('+random(0,255)+','+random(0,255)+','+random(0,255)+')';
+			this.color='rgb('+Math.random(0,255)+','+Math.random(0,255)+','+Math.random(0,255)+')';
 		}
 	}
 }
