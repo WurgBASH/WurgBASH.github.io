@@ -29,9 +29,9 @@ var paddleY=295;
 var rightPressed=false;
 var leftPressed=false;
 var paddleColor="#FF69B4";
-var score=0;
+var score;
 var highscore;
-document.cookie="highscore="+score;
+//document.cookie="highscore="+score;
 var leftbtn;
 var rightbtn;
 function drawHighScore(){
@@ -96,9 +96,11 @@ function buttonControl(rightbtn,leftbtn,b){
 }
 function draw() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	document.cookie="highscore="+score;
 	drawPaddle();
 	drawHighScore();
+	if (score>highscore){
+		document.cookie="highscore="+score;
+	}
 	drawScore();
 	drawBricks();
 	if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
