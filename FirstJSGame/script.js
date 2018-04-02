@@ -29,7 +29,7 @@ var paddleY=295;
 var rightPressed=false;
 var leftPressed=false;
 var paddleColor="#FF69B4";
-var score;
+var score = 0;
 //document.cookie="highscore="+score;
 var leftbtn;
 var rightbtn;
