@@ -72,7 +72,8 @@ function collisionDetection(){
 			var b=bricks[c][r];
 			if(score==brickRowCount*brickColumnCout){
 				if(score>highscore){
-					document.cookie="highscore="+score;}
+					document.cookie="highscore="+score;
+				}
 				alert("YOU WIN, YOUR SCORE: "+score);
 				document.location.reload();
 			}
@@ -124,8 +125,9 @@ function draw() {
 
 	if(y+dy >canvas.height) {
 			y = canvas.height-30;
-			if(score>highscore)
+			if(score>highscore){
 					document.cookie="highscore="+score;
+			}
 			alert("GAME OVER, YOUR SCORE: "+score);
 			document.location.reload();
 	}
