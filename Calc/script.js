@@ -15,7 +15,11 @@ function Form(el){
 			}
 			val=parseInt(val/2);
 		}
-        return res.split("").reverse().join("");
+		if(res!=""){
+        	return res.split("").reverse().join("");
+		}else{
+			return 0;
+		}
     };
     function decimal(val)
     {
