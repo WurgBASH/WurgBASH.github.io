@@ -95,5 +95,5 @@ func main() {
 	http.HandleFunc("/delete", deleteHandler)
 	http.HandleFunc("/SavePost", savePostHandler)
 
-	http.ListenAndServe("http://wurgbash.github.io/FirstBackEnd/", nil)
+	http.ListenAndServe("wurgbash.github.io/FirstBackEnd/", nil)
 }
