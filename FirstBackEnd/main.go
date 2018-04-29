@@ -4,16 +4,11 @@ import (
 	"fmt"
 	"html/template"
 	"net/http"
-	"crypto/rand"
 	"./models"
 )
 
 var posts map[string]*models.Post
-func GenerateId() string {
-	b := make([]byte, 16)
-	rand.Read(b)
-	return fmt.Sprintf("%x", b)
-}
+
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	t, err := template.ParseFiles("templates/index.html", "templates/header.html", "templates/footer.html")
 	if err != nil {
@@ -95,5 +90,5 @@ func main() {
 	http.HandleFunc("/delete", deleteHandler)
 	http.HandleFunc("/SavePost", savePostHandler)
 
-	http.ListenAndServe("151.101.113.147:3000", nil)
+	http.ListenAndServe("tesddsd.zzz.com.ua/", nil)
 }
