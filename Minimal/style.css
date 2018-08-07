@@ -253,5 +253,43 @@ footer{
 	color:gray;
 }
 
+@media(min-width:768px) and (max-width:991px){
+	header{
+		height: 5vh;
+	}
+	.navbar-nav{
+		position: absolute;
+		background-color: white;
+		padding: 20px;
+	}
+	.slide {
+    padding-left: 0;
 
+}
+
+.sec4 h1,h2{
+	font-size: 40pt;
+	color:#49d7b0;
+}
+.sec4 h1{
+	font-size: 75pt;
+	font-style: bold;
+}
+.sec4 h2{
+	margin-top:-20px;
+}
+#sec4Text{
+	padding-left: 130px;
+	padding-top: 50px;
+}
+#sec4Array{
+	padding-top: 20px;
+}
+.sec4{
+	min-height: 5vh;
+}
+footer{
+	min-height: 0;
+}
+}
 
