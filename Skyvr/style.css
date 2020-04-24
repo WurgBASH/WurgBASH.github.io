@@ -687,6 +687,8 @@ padding-top: 50px;
   cursor: pointer;
   position: absolute;
   bottom: 100px;
+  z-index: 50;
+  left: 40px;
 }
 .power input {
   display: none;
