@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SkyVR</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/emojione/2.2.6/assets/css/emojione.min.css"/>
+ 
+  <script src="{{ url_for('static', filename='jquery.js') }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script type="text/javascript">
+   $(document).ready(function(){
+    $('.side-nav').sidenav();
+    $(".sidenav-trigger").sidenav();
+  });
+</script>
+</head>
+<body>
+
+  <header>  
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo hide-on-med-and-down"><img class = "logo_white" src="{{ url_for('static', filename='img/Logo-w.png') }}"></a>
+        <a href="#" class="brand-logo hide-on-large-only right"><img class = "logo_white1" src="{{ url_for('static', filename='img/Logo-w.png') }}"></a>
+        <a href="#" data-target="mobile-demo" data-activates="mobile-demo"  class="sidenav-trigger hide-on-large-only"><i class="material-icons burger_icon">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down nav_ul">
+          <li><a href="#" class = "a_logo"><img class = "logo_social" src="{{ url_for('static', filename='img/inst.png') }}"></a></li>
+          <li><a href="#" class = "a_logo"><img class = "logo_social" src="{{ url_for('static', filename='img/youtube.png') }}"></a></li>
+          <li><a href="#">Игры</a></li>
+          <li><a href="#">Цены</a></li>
+          <li><a href="#">Где мы?</a></li>
+          <li><div class="btn-cont">
+            <a class="btn1">
+              Забронировать
+              <span class="line-1"></span>
+              <span class="line-2"></span>
+              <span class="line-3"></span>
+              <span class="line-4"></span></a>
+            </div>
+          </li>
+
+        </ul>
+
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="#">Игры</a></li>
+          <li><a href="#">Цены</a></li>
+          <li><a href="#">Где мы?</a></li>
+          <li><a href="#">Забронировать</a></li>
+          <li class="row"><a class="social_a btn blue btn-floating waves-effect waves-light"><img class = "logo_social" src="{{ url_for('static', filename='img/inst.png') }}"></a>
+            <a class="social_a btn blue btn-floating waves-effect waves-light"><img class = "logo_social" src="{{ url_for('static', filename='img/youtube.png') }}"></a>
+          </li>
+        </ul>
+
+      </div> 
+
+    </nav>
+
+    
+
+  </header>
+  <div id='stars'></div>
+  <div class = 'header_'>
+    <div id='title'>
+      <video autoplay muted loop id="myVideo">
+        <source src="{{ url_for('static', filename='vid/1.mp4') }}" type="video/mp4">
+        </video>
+
+        <div class="content">
+          <div id = "content_wr" class="center-align">
+            <h2>Доступный VR в Харькове</h2>
+            <p>С нами, ты забудешь что такое реальность!</p>
+            <button href="#" id="header_button" style="--content: 'Play now';">
+              <div class="left1"></div>
+              Play now
+              <div class="right1"></div>
+            </button>
+
+
+            <label class="power" >
+              <input type="checkbox" onclick="myFunction()">
+              <div>
+                <svg viewBox="0 0 44 44">
+                  <path d="M22,6 C31,6 38,13 38,22 C38,31 31,38 22,38 C13,38 6,31 6,22 C6,13 13,6 22,6 L22,28" id="path"></path>
+                </svg>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class = "container lead-magnit">
+      <div class="row">
+        <div class="col s4"><div class=" valign-wrapper"><img src="{{ url_for('static', filename='img/r2.png') }}" width="350vh"></div></div>
+        <div class="col s8 right-align"><h1 class="white-text robot_text">А ты уже подписан на нашего чат-бота?</h1>
+          <h6 class="white-text">В нашем боте ты сможешь собирать бонусы и следить за своими играми!</h6>
+          <a class="waves-effect waves-light btn-large btn-color margin-top-20" href="https://web.telegram.org/"><i class="material-icons right">chat</i>Получить бонусы</a>
+
+
+        </div>
+        <div class=" col s12 center-align dots">
+          <span class="dot">Зайти в бота</span>
+          <span class="dot">Записаться на игру</span>
+          <span class="dot">Прийти на 5 игр</span>
+          <span class="dot">Бесплатная игра</span>
+        </div>
+      </div>
+    </div>
+
+    <div class = "container advantages">
+      <div>
+      <div class="row"><div class="col s12 white-text"><h2>Почему мы?</h2></div></div>
+      <div class="row white-text"> 
+        <div class="col s4 adv-block"> <i class="medium material-icons pink-text text-accent-2">mood</i><br>This is a cool feature about your product! It really separates you from the crowd.</div> 
+        <div class="col s4 adv-block"> <i class="medium material-icons pink-text text-accent-2">mood</i><br>This is a cool feature about your product! It really separates you from the crowd.</div> 
+        <div class="col s4 adv-block"> <i class="medium material-icons pink-text text-accent-2">mood</i><br>This is a cool feature about your product! It really separates you from the crowd.</div> 
+
+        <div class="col s4 adv-block"> <i class="medium material-icons pink-text text-accent-2">mood</i><br>This is a cool feature about your product! It really separates you from the crowd.</div> 
+        <div class="col s4 adv-block"> <i class="medium material-icons pink-text text-accent-2">mood</i><br>This is a cool feature about your product! It really separates you from the crowd.</div> 
+        <div class="col s4 adv-block"> <i class="medium material-icons pink-text text-accent-2">mood</i><br>This is a cool feature about your product! It really separates you from the crowd.</div> 
+          
+
+      </div>
+    </div>
+    </div>
+
+
+
+
+
+
+    <script>
+// Get the video
+var video = document.getElementById("myVideo");
+
+// Get the button
+var btn = document.getElementById("myBtn");
+
+// Pause and play the video, and change the button text
+function myFunction() {
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
+}
+</script>
+</body>
+</html>
