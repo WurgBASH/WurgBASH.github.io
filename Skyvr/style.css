@@ -1022,7 +1022,8 @@ margin-bottom: 100px;
       margin-left: 10px;
   }
 .swiper-pagination-fraction {
-  left: 90%;
+  left: 80%;
+  border: 2px solid #325d94;
 }
 .swiper-button-prev {
     left: 73% !important;
