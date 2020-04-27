@@ -409,10 +409,7 @@ nav .a_logo{
   padding-top: 10vh;
 }
 
-.side-nav li:last-child{
-  position: absolute;
-  bottom: 10vh;
-}
+
 .burger_icon{
   padding-left: 15px;
 }
@@ -982,6 +979,82 @@ input:focus {
 background-size: 98.99px 98.99px;
 margin-top: 100px;
 margin-bottom: 100px;
+}
+
+
+@media only screen and (max-width: 767px) {
+  #myVideo {
+    position: inherit;
+    max-width: 100%;
+  }
+ .logo_white1 {
+    height: 40px;
+}
+#content_wr {
+  margin-top: 0;
+  padding-top: 0;
+  }
+#content_wr p{
+  font-size: 25px;
+}
+#content_wr a{
+  display: none;
+}
+
+.content{
+  height: auto;
+}
+.header_{
+  height: 70vh;
+}
+.power{
+  display: none;
+}
+
+.advantages {
+    height: auto;
+}
+
+.games {
+    height: auto;
+}
+.swiper-container h1 {
+      margin-left: 10px;
+  }
+.swiper-pagination-fraction {
+  left: 90%;
+}
+.swiper-button-prev {
+    left: 73% !important;
+
+}
+
+
+.swiper-button-next {
+    right: 15% !important;
+}
+
+
+.prices {
+    height: auto;
+}
+
+.calendar {
+    height: auto;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+.task-type-choices label {
+        padding-left: 25px !important;
+    padding-right: 25px !important;
+    }
+
+    .side-nav li>a {
+    font-size: 28px !important;
+    margin-bottom: 10px !important;
+}
+
+
 }
 
 
