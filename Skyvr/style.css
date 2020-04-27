@@ -1054,7 +1054,22 @@ margin-bottom: 100px;
     margin-bottom: 10px !important;
 }
 
+#card-front {display: none;}
+#card-back {
+    transform: rotateY(0deg);}
 
+.card2 {
+  backface-visibility: visible;
+}
+
+.swiper-container h1 {position: absolute;}
+.swiper-button-next{
+  display: none;
+}
+.swiper-button-prev{
+  display: none;
+}
+/*end*/
 }
 
 
