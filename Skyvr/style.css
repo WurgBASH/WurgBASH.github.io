@@ -1056,13 +1056,14 @@ margin-bottom: 100px;
 
 #card-front {display: none;}
 #card-back {
-    transform: rotateY(0deg);}
+    transform: rotateY(0deg);position: absolute;}
 
 .card2 {
   backface-visibility: visible;
+  position: absolute;
 }
 
-.swiper-container h1 {position: absolute;}
+.swiper-container h1 {position: absolute;bottom: 0;}
 .swiper-button-next{
   display: none;
 }
