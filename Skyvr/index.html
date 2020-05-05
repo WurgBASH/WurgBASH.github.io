@@ -35,11 +35,11 @@
           <li><a href="#" class = "a_logo"><img class = "logo_social" src="tik.png"></a></li>
           <li><a href="#" class = "a_logo"><img class = "logo_social" src="inst.png"></a></li>
           <li><a href="#" class = "a_logo"><img class = "logo_social" src="youtube.png"></a></li>
-          <li><a href="#">Игры</a></li>
-          <li><a href="#">Цены</a></li>
-          <li><a href="#">Где мы?</a></li>
+          <li><a href="#" id="main_game_but">Игры</a></li>
+          <li><a href="#" id="main_price_but">Цены</a></li>
+          <li><a href="#" id="main_where_but">Где мы?</a></li>
           <li><div class="btn-cont">
-            <a class="btn1">
+            <a class="btn1" id="main_bron_but">
               Забронировать
               <span class="line-1"></span>
               <span class="line-2"></span>
@@ -57,10 +57,10 @@
     </nav>
   </div>
   <ul class="side-nav" id="mobile-demo">
-          <li><a href="#">Игры</a></li>
-          <li><a href="#">Цены</a></li>
-          <li><a href="#">Где мы?</a></li>
-          <li><a href="#">Забронировать</a></li>
+          <li><a href="#" id="main_game_but">Игры</a></li>
+          <li><a href="#" id="main_price_but">Цены</a></li>
+          <li><a href="#" id="main_where_but">Где мы?</a></li>
+          <li><a href="#" id="main_bron_but">Забронировать</a></li>
            <li><div class="divider"></div></li>
              <li><a class="waves-effect" href="#!">Instagram</a></li>
          <li><a class="waves-effect" href="#!">Tiktok</a></li>
@@ -395,7 +395,7 @@
                       <div class="row center-align"> <a class="waves-effect waves-light btn-large">Забронировать</a></div>
 
                     </div>
-                    <div class="container">
+                    <div class="container where-we">
                       <div class="row white-text"><h2 class="center-align">Где мы находимся?</h2>
 
                       </div>
@@ -408,7 +408,7 @@
                         </div>
                         <div class="col s12 m6">
                           <!-- <div id="map"></div> -->
-                          <img src="map.png">
+                          <img src="map.png" style="width:100%;">
                         </div>
                       </div>
                     </div>
@@ -529,9 +529,27 @@ function myFunction() {
          return false;
       }
       $("#drop-down-scroll").on('click', function(event){
-    slowScroll('#advantages');
+    slowScroll('#advantages');});
+
+    $("#main_game_but").on('click', function(event){
+    slowScroll('.games');
+  });
+    
+    $("#main_price_but").on('click', function(event){
+    slowScroll('.prices');
+  });
+
+    $("#main_where_but").on('click', function(event){
+    slowScroll('.where-we');
+  });
+
+    $("#main_bron_but").on('click', function(event){
+    slowScroll('.calendar');
+  });
+
+
     //(... rest of your JS code)
-});
+
 
 </script>
 </body>

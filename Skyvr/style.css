@@ -1073,6 +1073,9 @@ margin-bottom: 100px;
 .swiper-button-prev{
   display: none;
 }
+h2 {
+    font-size: 3rem !important;
+    }
 /*end*/
 }
 
