@@ -16,7 +16,7 @@ $( document ).ready( function() {
     var colors = [ '#00FF00', '#00FF00', '#00FF00', '#00FF00' ];
     
     var toRadians = function( d ) {
-	return Math.PI*(d/180.0);
+    return Math.PI*(d/180.0);
     };
     
     var paint = function(ctx) {
@@ -24,16 +24,35 @@ $( document ).ready( function() {
     };
 
     var mrand_i = function(max) {
-	return Math.floor( Math.random()*max );
+    return Math.floor( Math.random()*max );
     };
 
     var draw = function() {
-	ctx.fillStyle = 'black';
-	ctx.fillRect(0,0,820,540);
+    ctx.fillStyle = 'black';
+    ctx.fillRect(0,0,820,540);
 
-	iteration_count = getIntegerInput('iterations');
-	line_width      = getIntegerInput('line_width');
-	c_curve( x, y, len, alpha_angle, iteration_count, ctx );
+    iteration_count = getIntegerInput('iterations');
+    line_width      = getIntegerInput('line_width');
+    anim_speed      = getIntegerInput('anim_speed');
+    // c_curve( x, y, len, alpha_angle, iteration_count, ctx );
+
+    var i = 1;                    
+
+    function myLoop () {           
+       setTimeout(function () {  
+        ctx.fillRect(0,0,820,540); 
+ 
+          c_curve( x, y, len, alpha_angle, i, ctx );      
+          i++;                     
+          if (i < iteration_count) {            
+             myLoop();            
+          }                       
+       }, anim_speed)
+    }
+
+    myLoop();                  
+   
+
     };
     
     var c_curve = function( x, y, length, angle, iteration, ctx  ) {
@@ -46,20 +65,21 @@ $( document ).ready( function() {
             c_curve(x, y, length, (alpha - default_angle), (iteration - 1), ctx ); // Recursive Call
         } else {
             ctx.strokeStyle = colors[ mrand_i(colors.length+1) ]; // Pick a random color for this segment
-	    ctx.lineWidth   = line_width;
-	    ctx.lineCap = 'round';
-	    ctx.beginPath();
-	    ctx.moveTo( x, y );
-	    ctx.lineTo( x + (length * Math.cos(toRadians(alpha))),
-			y + (length * Math.sin(toRadians(alpha))) );
-	    ctx.stroke();
+        ctx.lineWidth   = line_width;
+        ctx.lineCap = 'round';
+        ctx.beginPath();
+        ctx.moveTo( x, y );
+        ctx.lineTo( x + (length * Math.cos(toRadians(alpha))),
+            y + (length * Math.sin(toRadians(alpha))) );
+        ctx.stroke();
         }
     };
- 
-    draw();
+    draw();  
+
 
     $( 'input#iterations' ).change( draw );
     $( 'input#line_width' ).change( draw );
+    $( 'input#anim_speed' ).change( draw );
    
 } );
 
