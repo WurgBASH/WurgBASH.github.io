@@ -200,7 +200,7 @@ function drawO(){
     point1 = getIntegerInput('xCOR')
     point2 = getIntegerInput('yCOR')
     
-    if (getIntegerInput('a11') !=1){
+    if (getIntegerInput('a11') !=1 || getIntegerInput('a12') !=1 || getIntegerInput('a13') !=1 || getIntegerInput('a14') !=1 ||getIntegerInput('a21') !=1 || getIntegerInput('a22') !=1 || getIntegerInput('a23') !=1 || getIntegerInput('a24') !=1){
         point1 = point1*getIntegerInput('a11') +point2*getIntegerInput('a12') +1*getIntegerInput('a13') +0*getIntegerInput('a14');
         point2 = point1*getIntegerInput('a21')+ point2*getIntegerInput('a22') +1*getIntegerInput('a23') +0*getIntegerInput('a24');
     }
