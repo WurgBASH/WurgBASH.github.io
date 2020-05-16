@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 	<head>
 		<title>ЛР6</title>
 		<meta charset="utf-8">
@@ -26,14 +26,14 @@
 			}
 
 			a { color: blue; }
-
 		</style>
 	</head>
 	<body style="text-align: center">
-<h3>Лабораторна робота № 6 Побудова 2D і 3D графічних примітивів за допомогою бібліотеки OpenGL</h3>
-<h4>Виконав студент групи 6_04_121_012_19_1</h4>
-<h4>Крижановський Максим</h4>
+		<h3>Лабораторна робота № 6 Побудова 2D і 3D графічних примітивів за допомогою бібліотеки OpenGL</h3>
+		<h4>Виконав студент групи 6_04_121_012_19_1</h4>
+		<h4>Крижановський Максим</h4>
 
+		<!-- підключаємо всі потрібні скрипти -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
 
 		<script src="js/controls/OrbitControls.js"></script>
@@ -46,9 +46,8 @@
 
 		<script>
 
-
 			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
-
+			// ініціалізуємо змінні
 			var camera, scene, renderer;
 			var cameraControls;
 			var effectController;
@@ -171,7 +170,7 @@
 			}
 
 			function setupGui() {
-
+				//створюємо елементи управління
 				effectController = {
 
 					shininess: 40.0,
@@ -329,12 +328,10 @@
 					shading === "glossy" ? phongMaterial : (
 					shading === "textured" ? texturedMaterial : reflectiveMaterial ) ) ) ) );
 
-
+				//добавляємо чайник до сцену
 				scene.add( teapot );
-
 			}
 
 		</script>
-
 	</body>
 </html>

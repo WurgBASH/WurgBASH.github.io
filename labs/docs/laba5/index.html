@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- для запуску проекту необхідно настроїти та запустити локальний веб-сервер -->
+<html lang="ru">
 	<head>
 		<meta charset="utf-8">
 		<title>ЛР5</title>
-		<link rel="shortcut icon" href="../../files/favicon.ico" />
-		<link rel="stylesheet" type="text/css" href="../../files/main.css">
+		<link rel="shortcut icon" href="https://wurgbash.github.io/files/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="https://wurgbash.github.io/files/main.css">
 		<style>
 			#info{
 				position: absolute;
@@ -16,7 +17,7 @@
 		<div id="info">
 			Лабораторна робота № 5 Елементи тривимірної комп'ютерної графіки в  HTML5<br />
 			Виконав студент групи 6_04_121_012_19_1<br />
-			Крижановський Максим<br />
+			Крижановський Максим<br/>
 			Кнопка "W" переміщення | кнопка "E" поворот навколо осі.
 		</div>
 		<div id ='rec'>
@@ -58,14 +59,14 @@
 				WebGLRenderer,
 				BoxBufferGeometry
 
-			} from "../../build/three.module.js";
+			} from "https://wurgbash.github.io/build/three.module.js";
 
 			import {OrbitControls} from  'https://wurgbash.github.io/labs/examples/jsm/controls/OrbitControls.js';
-			import {WireframeGeometry} from '../../src/geometries/WireframeGeometry.js ';
-			import { LineSegments} from '../../src/objects/LineSegments.js ';
-			import {AxesHelper} from '../../src/helpers/AxesHelper.js ';
+			import {WireframeGeometry} from 'https://wurgbash.github.io/src/geometries/WireframeGeometry.js ';
+			import { LineSegments} from 'https://wurgbash.github.io/src/objects/LineSegments.js ';
+			import {AxesHelper} from 'https://wurgbash.github.io/src/helpers/AxesHelper.js ';
 			import {TransformControls} from 'https://wurgbash.github.io/labs/examples/jsm/controls/TransformControls.js';
-			import {GridHelper} from '../../src/helpers/GridHelper.js ';
+			import {GridHelper} from 'https://wurgbash.github.io/src/helpers/GridHelper.js ';
 			//створюємо константи
 			var cameraControls;
 			var transformControl;
@@ -152,7 +153,7 @@
 			var orbit;
 			var envMaps = ( function () {
 
-				var path = '../../examples/textures/cube/SwedishRoyalCastle/';
+				var path = 'https://wurgbash.github.io/examples/textures/cube/SwedishRoyalCastle/';
 				var format = '.jpg';
 				var urls = [
 					path + 'px' + format, path + 'nx' + format,
@@ -177,7 +178,7 @@
 
 			var diffuseMaps = ( function () {
 
-				var bricks = textureLoader.load( '../../examples/textures/brick_diffuse.jpg' );
+				var bricks = textureLoader.load( 'https://wurgbash.github.io/examples/textures/brick_diffuse.jpg' );
 				bricks.wrapS = RepeatWrapping;
 				bricks.wrapT = RepeatWrapping;
 				bricks.repeat.set( 9, 1 );
@@ -191,7 +192,7 @@
 
 			var roughnessMaps = ( function () {
 
-				var bricks = textureLoader.load( '../../examples/textures/brick_roughness.jpg' );
+				var bricks = textureLoader.load( 'https://wurgbash.github.io/examples/textures/brick_roughness.jpg' );
 				bricks.wrapT = RepeatWrapping;
 				bricks.wrapS = RepeatWrapping;
 				bricks.repeat.set( 9, 1 );
@@ -207,14 +208,14 @@
 
 				return {
 					none: null,
-					porcelainWhite: textureLoader.load( '../../examples/textures/matcaps/matcap-porcelain-white.jpg' )
+					porcelainWhite: textureLoader.load( 'https://wurgbash.github.io/examples/textures/matcaps/matcap-porcelain-white.jpg' )
 				};
 
 			} )();
 
 			var alphaMaps = ( function () {
 
-				var fibers = textureLoader.load( '../../examples/textures/alphaMap.jpg' );
+				var fibers = textureLoader.load( 'https://wurgbash.github.io/examples/textures/alphaMap.jpg' );
 				fibers.wrapT = RepeatWrapping;
 				fibers.wrapS = RepeatWrapping;
 				fibers.repeat.set( 9, 1 );
@@ -228,11 +229,11 @@
 
 			var gradientMaps = ( function () {
 
-				var threeTone = textureLoader.load( '../../examples/textures/gradientMaps/threeTone.jpg' );
+				var threeTone = textureLoader.load( 'https://wurgbash.github.io/examples/textures/gradientMaps/threeTone.jpg' );
 				threeTone.minFilter = NearestFilter;
 				threeTone.magFilter = NearestFilter;
 
-				var fiveTone = textureLoader.load( '../../examples/textures/gradientMaps/fiveTone.jpg' );
+				var fiveTone = textureLoader.load( 'https://wurgbash.github.io/examples/textures/gradientMaps/fiveTone.jpg' );
 				fiveTone.minFilter = NearestFilter;
 				fiveTone.magFilter = NearestFilter;
 
@@ -405,7 +406,6 @@
 
 
 			}
-
 			window.addEventListener( 'resize', function () {
 
 				camera.aspect = window.innerWidth / window.innerHeight;
@@ -416,7 +416,6 @@
 			}, false );
 
 			render();
-
 		</script>
 	</body>
 </html>
