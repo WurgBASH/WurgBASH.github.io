@@ -73,6 +73,12 @@ function handleAdd(event) {
     console.log(card)
 }
 
+function handleCart(event) {
+    const data = JSON.stringify({test: 'test'});
+    Telegram.WebApp.sendData(data);
+    Telegram.WebApp.close();
+}
+
 function plusLess(event, type) {
     const card = event.target.closest('.card')
     const input = card.querySelector('input')
