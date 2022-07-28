@@ -26,7 +26,7 @@ function template(index) {
 
     <div class="con-btn">
         <Button onclick="handleAdd(event)" class="add">
-            Open product
+            Add to cart
         </Button>
 
         <div class="con-input-btns">
@@ -62,10 +62,9 @@ for (let index = 41; index < 56; index++) {
 }
     
 function handleAdd(event) {
-    const card = event.target.closest('.card');
-    const data = JSON.stringify({test: 'test'});
-    Telegram.WebApp.sendData(data);
-    Telegram.WebApp.close();
+    const card = event.target.closest('.card')
+    card.classList.add('add-active')
+    console.log(card)
 }
 
 function plusLess(event, type) {
