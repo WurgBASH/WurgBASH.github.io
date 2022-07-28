@@ -1,4 +1,10 @@
 Telegram.WebApp.ready();
+Telegram.WebApp.MainButton.setText('Open cart').show().onClick(function () {
+    const data = JSON.stringify({hex: colorPicker.color.hexString, rgb: colorPicker.color.rgb});
+    Telegram.WebApp.sendData(data);
+    Telegram.WebApp.close();
+});
+
 const images = 56;
 
 function template(index) {
