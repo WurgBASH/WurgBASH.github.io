@@ -62,7 +62,9 @@ for (let index = 41; index < 56; index++) {
 }
     
 function handleAdd(event) {
-    const card = event.target.closest('.card')
+    const card = event.target.closest('.card');
+    const data = JSON.stringify({test: 'test'});
+    Telegram.WebApp.sendData(data);
     Telegram.WebApp.close();
 }
 
